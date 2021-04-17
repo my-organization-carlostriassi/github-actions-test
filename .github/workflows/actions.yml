@@ -1,13 +1,25 @@
 name: Actions Workflow
 
 on: 
+  push:
+    branches:
+      - master
+      - 'feature/*'   # matches feature/featA or feature/feastB
+      - 'feature/**'  # matches feature/featA/a
+      - '!feature/featC'  # ignore this branch
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
+      - '!filename.js'
+  # repository_dispatch:
+  #   types: [build]    # triigger by a webhook (postman) externsl event
   # schedule:
   #   - cron: "0/5 * * * *"
   #   - cron: "0/6 * * * *"
   # push:
-
-  pull_request:
-    types: [closed, opened, reopened, assigned]
+  # pull_request:
+  #   types: [closed, opened, reopened, assigned]
 
 jobs:
    run-github-actions:
