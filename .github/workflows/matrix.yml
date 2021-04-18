@@ -6,9 +6,9 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubantu-latest, windows-latest]
+        os: [macos-latest, ubantu-latest, windows-latest]
         node_version: [6,8,10]  
-    runs-on: ${{matrix.os}}   
+    runs-on: ${{ matrix.os }}   
       # max-parallel: 3
       # fail-fast: true
 
