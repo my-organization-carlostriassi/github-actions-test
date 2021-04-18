@@ -3,11 +3,12 @@ on: push
 
 jobs:
   node-version:
-    runs-on: ${{matrix.os}}
+
     strategy:
       matrix:
         os: [macos-latest,ubantu-latest,windows-latest]
-        node_version: [6,8,10]      
+        node_version: [6,8,10]  
+    runs-on: ${{matrix.os}}   
       # max-parallel: 3
       # fail-fast: true
 
